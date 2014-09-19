@@ -3,6 +3,8 @@
 rotation = document.getElementById 'rotation'
 gap = document.getElementById 'gap'
 lineWidth = document.getElementById 'line-width'
+bottomColor = document.getElementById 'bottom-color'
+topColor = document.getElementById 'top-color'
 
 canvas1 = document.getElementById 'one'
 canvas2 = document.getElementById 'two'
@@ -25,9 +27,10 @@ gap.addEventListener 'input', ->
 lineWidth.addEventListener 'input', ->
   drawMoireLines()
 
-drawPattern = ({ctx}) ->
+drawPattern = ({ctx, color}) ->
   ctx.clearRect 0, 0, size, size
   ctx.lineWidth = getLineWidth()
+  ctx.strokeStyle = color
   for i in [0..size] by getGapValue()
     ctx.beginPath()
     ctx.moveTo i, 0
@@ -37,9 +40,17 @@ drawPattern = ({ctx}) ->
 rotation.addEventListener 'input', ->
   setRotation()
 
+bottomColor.addEventListener 'input', ->
+  drawMoireLines()
+
+topColor.addEventListener 'input', ->
+  drawMoireLines()
+
+crossBrowserTransforms = ['-webkit-transform', '-ms-transform', 'transform']
 do setRotation = ->
-  canvas2.style['-webkit-transform'] = "rotate(#{rotation.value}deg)"
+  value = "rotate(#{rotation.value}deg)"
+  canvas2.style[transform] = value for transform in crossBrowserTransforms
 
 do drawMoireLines = ->
-  drawPattern ctx: ctx1
-  drawPattern ctx: ctx2
+  drawPattern ctx: ctx1, color: bottomColor.value
+  drawPattern ctx: ctx2, color: topColor.value

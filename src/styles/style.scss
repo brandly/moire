@@ -1,3 +1,8 @@
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
+
 .wrapper {
   position: relative;
   height: 400px;
@@ -9,6 +14,36 @@
   }
 }
 
+.controlled-moire {
+  width: 700px;
+  margin: 0 auto;
+}
+
+// # TODO: make responsive
+.the-moire {
+  width: 500px;
+  float: left;
+}
+
 .controls {
   margin: 50px 0;
+  margin-left: 530px;
+}
+
+.labeled {
+  margin: 16px 0;
+  label {
+    display: block;
+    font-size: 32px;
+    line-height: 40px;
+  }
+  input {
+    margin: 8px 0;
+  }
+}
+
+.colors {
+  input {
+    margin: 8px 2px;
+  }
 }

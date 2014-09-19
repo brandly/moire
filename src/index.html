@@ -11,19 +11,33 @@
     <link rel="shortcut icon" href="./favicon.ico">
   </head>
   <body>
-    <div class="wrapper">
-      <canvas id="one" class="stacked"></canvas>
-      <canvas id="two" class="stacked"></canvas>
-    </div>
-    <div class="controls">
-      <label for="rotation">rotate</label>
-      <input id="rotation" type="range" value="10" min="0" max="90">
+    <div class="controlled-moire">
+      <div class="the-moire wrapper">
+        <canvas id="one" class="stacked"></canvas>
+        <canvas id="two" class="stacked"></canvas>
+      </div>
+      <div class="controls">
+        <div class="labeled slider">
+          <label for="rotation">rotate</label>
+          <input id="rotation" type="range" value="10" min="0" max="45">
+        </div>
 
-      <label for="gap">gap</label>
-      <input id="gap" type="range" value="3" min="2" max="15">
+        <div class="labeled slider">
+          <label for="gap">gap</label>
+          <input id="gap" type="range" value="5" min="2" max="15">
+        </div>
 
-      <label for="line-width">line width</label>
-      <input id="line-width" type="range" value="1" min="1" max="10">
+        <div class="labeled slider">
+          <label for="line-width">line width</label>
+          <input id="line-width" type="range" value="2" min="1" max="10">
+        </div>
+
+        <div class="labeled colors">
+          <label>colors</label>
+          <input id="bottom-color" type="color" value="#ff0000">
+          <input id="top-color" type="color" value="#00ff00">
+        </div>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>
