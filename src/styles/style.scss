@@ -1,0 +1,14 @@
+.wrapper {
+  position: relative;
+  height: 400px;
+
+  .stacked {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.controls {
+  margin: 50px 0;
+}
