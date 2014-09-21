@@ -1,5 +1,5 @@
 (function() {
-  var bottomColor, canvas1, canvas2, crossBrowserTransforms, ctx1, ctx2, drawMoireLines, drawPattern, gap, getGapValue, getLineWidth, lineWidth, rotation, setRotation, size, topColor;
+  var bottomColor, canvas1, canvas2, crossBrowserTransforms, ctx1, ctx2, drawMoireLines, drawPattern, gap, getGapValue, getLineWidth, lineWidth, rotation, setRotation, setWrapperHeightToWidth, size, topColor, wrapper;
 
   rotation = document.getElementById('rotation');
 
@@ -92,5 +92,19 @@
       color: topColor.value
     });
   })();
+
+  wrapper = document.getElementsByClassName('wrapper')[0];
+
+  (setWrapperHeightToWidth = function() {
+    var width;
+    width = wrapper.offsetWidth;
+    if (window.innerWidth < 521) {
+      return wrapper.style.height = "" + width + "px";
+    } else {
+      return wrapper.style.height = null;
+    }
+  })();
+
+  window.addEventListener('resize', setWrapperHeightToWidth);
 
 }).call(this);

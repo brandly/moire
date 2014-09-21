@@ -48,16 +48,48 @@ body {
     left: 0; }
 
 .controlled-moire {
-  width: 700px;
+  width: 100%;
+  max-width: 780px;
   margin: 0 auto; }
+  @media screen and (min-width: 521px) and (max-width: 760px) {
+    .controlled-moire {
+      width: 520px; } }
 
 .the-moire {
-  width: 500px;
-  float: left; }
+  float: left;
+  width: 480px;
+  max-width: 100%; }
+  .the-moire canvas {
+    width: 480px;
+    max-width: 100%; }
+  @media screen and (min-width: 521px) and (max-width: 760px) {
+    .the-moire {
+      max-width: 300px; }
+      .the-moire canvas {
+        max-width: 300px; } }
+  @media screen and (max-width: 520px) {
+    .the-moire {
+      float: none;
+      width: 100%;
+      overflow: hidden; }
+      .the-moire canvas {
+        width: 100%; } }
 
 .controls {
   margin: 50px 0;
-  margin-left: 530px; }
+  margin-left: 600px; }
+  @media screen and (min-width: 521px) and (max-width: 760px) {
+    .controls {
+      margin-left: 380px; } }
+  @media screen and (max-width: 520px) {
+    .controls {
+      margin-left: 0px;
+      margin-top: 40px;
+      padding: 0 8px; }
+      .controls input[type="range"] {
+        width: 100%; }
+      .controls label {
+        padding: 0 8px; } }
 
 .labeled {
   margin: 16px 0; }
