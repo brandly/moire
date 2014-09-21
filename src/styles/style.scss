@@ -5,6 +5,9 @@ body {
   font-weight: 300;
 }
 
+$medium-screen: "screen and (min-width: 521px) and (max-width: 760px)";
+$small-screen: "screen and (max-width: 520px)";
+
 .wrapper {
   position: relative;
   height: 400px;
@@ -17,19 +20,60 @@ body {
 }
 
 .controlled-moire {
-  width: 700px;
+  width: 100%;
+  max-width: 780px;
   margin: 0 auto;
+
+  @media #{$medium-screen} {
+    width: 520px;
+  }
 }
 
-// # TODO: make responsive
 .the-moire {
-  width: 500px;
   float: left;
+  width: 480px;
+  max-width: 100%;
+  canvas {
+    width: 480px;
+    max-width: 100%;
+  }
+
+  @media #{$medium-screen} {
+    max-width: 300px;
+    canvas {
+      max-width: 300px;
+    }
+  }
+
+  @media #{$small-screen} {
+    float: none;
+    width: 100%;
+    overflow: hidden;
+    canvas {
+      width: 100%;
+    }
+  }
 }
 
 .controls {
   margin: 50px 0;
-  margin-left: 530px;
+  margin-left: 600px;
+
+  @media #{$medium-screen} {
+    margin-left: 380px;
+  }
+
+  @media #{$small-screen} {
+    margin-left: 0px;
+    margin-top: 40px;
+    padding: 0 8px;
+    input[type="range"] {
+      width: 100%;
+    }
+    label {
+      padding: 0 8px;
+    }
+  }
 }
 
 .labeled {

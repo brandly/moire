@@ -54,3 +54,19 @@ do setRotation = ->
 do drawMoireLines = ->
   drawPattern ctx: ctx1, color: bottomColor.value
   drawPattern ctx: ctx2, color: topColor.value
+
+
+# Basically, the wrapper's height is questionable, since everything is
+# absolutely positioned in it. When there are other elements below it,
+# it needs an explicit height. There's probably a better way to do this.
+wrapper = document.getElementsByClassName('wrapper')[0]
+
+do setWrapperHeightToWidth = ->
+  width = wrapper.offsetWidth
+  if window.innerWidth < 521
+    wrapper.style.height = "#{width}px"
+
+  else
+    wrapper.style.height = null
+
+window.addEventListener 'resize', setWrapperHeightToWidth
