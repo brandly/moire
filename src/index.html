@@ -13,29 +13,57 @@
   <body>
     <div class="controlled-moire">
       <div class="the-moire wrapper">
-        <canvas id="one" class="stacked"></canvas>
-        <canvas id="two" class="stacked"></canvas>
+        <canvas id="lines-one" class="stacked"></canvas>
+        <canvas id="lines-two" class="stacked"></canvas>
       </div>
       <div class="controls">
         <div class="labeled slider">
-          <label for="rotation">rotation</label>
-          <input id="rotation" type="range" value="10" min="0" max="45">
+          <label for="lines-rotation">rotation</label>
+          <input id="lines-rotation" type="range" value="10" min="0" max="45">
         </div>
 
         <div class="labeled slider">
-          <label for="gap">gap</label>
-          <input id="gap" type="range" value="5" min="2" max="15">
+          <label for="lines-gap">gap</label>
+          <input id="lines-gap" type="range" value="5" min="2" max="15">
         </div>
 
         <div class="labeled slider">
-          <label for="line-width">line width</label>
-          <input id="line-width" type="range" value="2" min="1" max="10">
+          <label for="lines-line-width">line width</label>
+          <input id="lines-line-width" type="range" value="2" min="1" max="10">
         </div>
 
         <div class="labeled colors">
           <label>colors</label>
-          <input id="bottom-color" type="color" value="#ff0000">
-          <input id="top-color" type="color" value="#00ff00">
+          <input id="lines-bottom-color" type="color" value="#ff0000">
+          <input id="lines-top-color" type="color" value="#00ff00">
+        </div>
+      </div>
+    </div>
+
+    <div class="controlled-moire moire-circles">
+      <div class="the-moire wrapper">
+        <canvas id="circles-canvas"></canvas>
+      </div>
+      <div class="controls">
+        <div class="labeled slider">
+          <label for="circles-distance">distance</label>
+          <input id="circles-distance" type="range" value="120" min="0" max="400">
+        </div>
+
+        <div class="labeled slider">
+          <label for="circles-gap">gap</label>
+          <input id="circles-gap" type="range" value="5" min="2" max="15">
+        </div>
+
+        <div class="labeled slider">
+          <label for="circles-line-width">line width</label>
+          <input id="circles-line-width" type="range" value="2" min="1" max="10">
+        </div>
+
+        <div class="labeled colors">
+          <label>colors</label>
+          <input id="circles-bottom-color" type="color" value="#ff0000">
+          <input id="circles-top-color" type="color" value="#00ff00">
         </div>
       </div>
     </div>

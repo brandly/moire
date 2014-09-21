@@ -11,6 +11,7 @@ $small-screen: "screen and (max-width: 520px)";
 .wrapper {
   position: relative;
   height: 400px;
+  margin-bottom: 40px;
 
   .stacked {
     position: absolute;
@@ -20,19 +21,26 @@ $small-screen: "screen and (max-width: 520px)";
 }
 
 .controlled-moire {
+  clear: both;
   width: 100%;
   max-width: 780px;
-  margin: 0 auto;
+  margin: 40px auto;
 
   @media #{$medium-screen} {
     width: 520px;
   }
 }
 
+.moire-circles {
+  margin-top: 120px;
+}
+
 .the-moire {
   float: left;
   width: 480px;
   max-width: 100%;
+  margin-bottom: 120px;
+
   canvas {
     width: 480px;
     max-width: 100%;
@@ -49,6 +57,7 @@ $small-screen: "screen and (max-width: 520px)";
     float: none;
     width: 100%;
     overflow: hidden;
+    margin-bottom: 60px;
     canvas {
       width: 100%;
     }
